@@ -1,0 +1,21 @@
+id = "zed-snap"
+name = "Zed Snap"
+version = "0.1.0"
+schema_version = 1
+authors = ["Paiman Rasoli <paimanrasoli789@gmail.com>"]
+description = "Beautiful code screenshots: select code, press Ctrl+. / Cmd+., pick \"Snap selection\"."
+repository = "https://github.com/Paiman-Rasoli/zed-snap"
+
+[lib]
+kind = "Rust"
+version = "0.7.0"
+
+[language_servers.zed-snap]
+name = "Zed Snap"
+languages = [
+    "Astro", "C", "C#", "C++", "Clojure", "CSS", "Dart", "Diff", "Dockerfile", "Elixir", "Elm", "Erlang",
+    "F#", "Fish", "Gleam", "Go", "GraphQL", "Groovy", "Haskell", "HCL", "HEEX", "HTML", "Java", "JavaScript",
+    "JSON", "JSONC", "Julia", "Kotlin", "LaTeX", "Lua", "Make", "Markdown", "Nix", "OCaml", "Perl", "PHP",
+    "Plain Text", "PowerShell", "Prisma", "Proto", "Python", "R", "Ruby", "Rust", "Scala", "SCSS", "Shell Script",
+    "Solidity", "SQL", "Svelte", "Swift", "Terraform", "TOML", "TSX", "TypeScript", "Vue.js", "XML", "YAML", "Zig",
+]
