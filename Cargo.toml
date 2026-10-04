@@ -1,0 +1,29 @@
+[package]
+name = "zed-snap"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[lib]
+crate-type = ["cdylib"]
+path = "src/lib.rs"
+
+[dependencies]
+zed_extension_api = "0.7"
+
+# Root package is the Zed extension (built by Zed for wasm32-wasip2);
+# native crates live in the workspace and are not built by default.
+[workspace]
+resolver = "2"
+members = ["snap-core", "snap-lsp"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+repository = "https://github.com/Paiman-Rasoli/zed-snap"
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+strip = true
