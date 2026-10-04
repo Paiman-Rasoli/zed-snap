@@ -1,5 +1,5 @@
-id = "zed-snap"
-name = "Zed Snap"
+id = "snapcode"
+name = "SnapCode"
 version = "0.1.0"
 schema_version = 1
 authors = ["Paiman Rasoli <paimanrasoli789@gmail.com>"]
@@ -10,8 +10,8 @@ repository = "https://github.com/Paiman-Rasoli/zed-snap"
 kind = "Rust"
 version = "0.7.0"
 
-[language_servers.zed-snap]
-name = "Zed Snap"
+[language_servers.snapcode]
+name = "SnapCode"
 languages = [
     "Astro", "C", "C#", "C++", "Clojure", "CSS", "Dart", "Diff", "Dockerfile", "Elixir", "Elm", "Erlang",
     "F#", "Fish", "Gleam", "Go", "GraphQL", "Groovy", "Haskell", "HCL", "HEEX", "HTML", "Java", "JavaScript",

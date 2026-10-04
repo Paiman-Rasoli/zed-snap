@@ -15,7 +15,7 @@ use crate::clipboard;
 use crate::settings::Settings;
 use crate::slice;
 
-pub const SNAP_COMMAND: &str = "zed-snap.snap";
+pub const SNAP_COMMAND: &str = "snapcode.snap";
 
 struct Doc {
     text: String,
@@ -204,7 +204,7 @@ impl LanguageServer for Backend {
         self.apply_settings(params.initialization_options).await;
         Ok(InitializeResult {
             server_info: Some(ServerInfo {
-                name: "zed-snap".into(),
+                name: "snapcode".into(),
                 version: Some(env!("CARGO_PKG_VERSION").into()),
             }),
             capabilities: ServerCapabilities {
@@ -293,7 +293,7 @@ impl LanguageServer for Backend {
             .and_then(|v| serde_json::from_value::<SnapArgs>(v).ok());
         let Some(args) = args else {
             self.client
-                .show_message(MessageType::ERROR, "zed-snap: bad command arguments")
+                .show_message(MessageType::ERROR, "snapcode: bad command arguments")
                 .await;
             return Ok(None);
         };
@@ -318,7 +318,7 @@ impl LanguageServer for Backend {
             }
             Err(e) => {
                 self.client
-                    .show_message(MessageType::ERROR, format!("zed-snap: {e:#}"))
+                    .show_message(MessageType::ERROR, format!("snapcode: {e:#}"))
                     .await;
             }
         }

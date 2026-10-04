@@ -25,19 +25,19 @@ jobs:
       - uses: dtolnay/rust-toolchain@stable
         with:
           targets: ${{ matrix.target }}
-      - run: cargo build --release -p zed-snap-lsp --target ${{ matrix.target }}
+      - run: cargo build --release -p snapcode-lsp --target ${{ matrix.target }}
       - name: Package (unix)
         if: runner.os != 'Windows'
         run: |
-          name=zed-snap-lsp-${GITHUB_REF_NAME}-${{ matrix.target }}.tar.gz
-          tar -czf "$name" -C target/${{ matrix.target }}/release zed-snap-lsp
+          name=snapcode-lsp-${GITHUB_REF_NAME}-${{ matrix.target }}.tar.gz
+          tar -czf "$name" -C target/${{ matrix.target }}/release snapcode-lsp
           echo "ASSET=$name" >> "$GITHUB_ENV"
       - name: Package (windows)
         if: runner.os == 'Windows'
         shell: pwsh
         run: |
-          $name = "zed-snap-lsp-$env:GITHUB_REF_NAME-${{ matrix.target }}.zip"
-          Compress-Archive -Path target/${{ matrix.target }}/release/zed-snap-lsp.exe -DestinationPath $name
+          $name = "snapcode-lsp-$env:GITHUB_REF_NAME-${{ matrix.target }}.zip"
+          Compress-Archive -Path target/${{ matrix.target }}/release/snapcode-lsp.exe -DestinationPath $name
           "ASSET=$name" | Out-File -FilePath $env:GITHUB_ENV -Append
       - uses: actions/upload-artifact@v4
         with:
@@ -53,5 +53,5 @@ jobs:
           merge-multiple: true
       - uses: softprops/action-gh-release@v2
         with:
-          files: zed-snap-lsp-*
+          files: snapcode-lsp-*
           generate_release_notes: true

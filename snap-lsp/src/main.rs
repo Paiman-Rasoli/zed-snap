@@ -1,4 +1,4 @@
-//! zed-snap-lsp: language server offering a "Snap selection" code action that
+//! snapcode-lsp: language server offering a "Snap selection" code action that
 //! renders the selected code to a PNG, plus a `render` CLI subcommand.
 
 mod clipboard;
@@ -15,7 +15,7 @@ use settings::Settings;
 
 #[derive(Parser)]
 #[command(
-    name = "zed-snap-lsp",
+    name = "snapcode-lsp",
     version,
     about = "Beautiful code screenshots for Zed"
 )]

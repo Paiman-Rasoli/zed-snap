@@ -3,8 +3,8 @@ use std::fs;
 use zed_extension_api::{self as zed, settings::LspSettings, LanguageServerId, Result};
 
 const REPO: &str = "Paiman-Rasoli/zed-snap";
-const BINARY: &str = "zed-snap-lsp";
-const SERVER_ID: &str = "zed-snap";
+const BINARY: &str = "snapcode-lsp";
+const SERVER_ID: &str = "snapcode";
 
 struct ZedSnap {
     cached_binary: Option<String>,

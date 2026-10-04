@@ -1420,6 +1420,29 @@ dependencies = [
 ]
 
 [[package]]
+name = "snapcode"
+version = "0.1.0"
+dependencies = [
+ "zed_extension_api",
+]
+
+[[package]]
+name = "snapcode-lsp"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "arboard",
+ "chrono",
+ "clap",
+ "dirs",
+ "serde",
+ "serde_json",
+ "snap-core",
+ "tokio",
+ "tower-lsp",
+]
+
+[[package]]
 name = "spdx"
 version = "0.10.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2291,29 +2314,6 @@ dependencies = [
  "quote",
  "syn 3.0.6",
  "synstructure",
-]
-
-[[package]]
-name = "zed-snap"
-version = "0.1.0"
-dependencies = [
- "zed_extension_api",
-]
-
-[[package]]
-name = "zed-snap-lsp"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "arboard",
- "chrono",
- "clap",
- "dirs",
- "serde",
- "serde_json",
- "snap-core",
- "tokio",
- "tower-lsp",
 ]
 
 [[package]]

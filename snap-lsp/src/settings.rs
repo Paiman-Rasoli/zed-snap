@@ -39,7 +39,7 @@ impl Settings {
                 Ok(s) => (s, None),
                 Err(e) => (
                     Self::default(),
-                    Some(format!("zed-snap: invalid settings ({e}); using defaults")),
+                    Some(format!("snapcode: invalid settings ({e}); using defaults")),
                 ),
             },
         }
@@ -51,7 +51,7 @@ impl Settings {
             _ => dirs::picture_dir()
                 .or_else(dirs::home_dir)
                 .unwrap_or_else(std::env::temp_dir)
-                .join("zed-snap"),
+                .join("snapcode"),
         }
     }
 }
