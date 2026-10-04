@@ -1,0 +1,17 @@
+[package]
+name = "snap-core"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+ab_glyph = "0.2"
+anyhow = "1"
+image = { version = "0.25", default-features = false, features = ["png"] }
+serde = { version = "1", features = ["derive"] }
+syntect = { version = "5", default-features = false, features = ["default-fancy"] }
+tiny-skia = "0.11"
+two-face = { version = "0.5", default-features = false, features = ["syntect-fancy"] }
+
+[dev-dependencies]
+serde_json = "1"
